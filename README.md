@@ -1,1 +1,1 @@
-# OpenBMC
+# How to prepare OpenBMC
