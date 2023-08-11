@@ -5,4 +5,7 @@ In this tutorial, you will learn how to prepare OpenBMC as an open source embedd
 </p>
 
 # Step 1
-Choose Ubuntu 22.04 LTS as your host. Install it on your computer or a virtual environment such as VMWare. Do not forget to install all packages during installation. After installation process has been completed, 
+Choose Ubuntu 22.04 LTS as your host. Install it on your computer or a virtual environment such as VMWare. Do not forget to download updates while installing the Ubuntu. After installation process has been completed, check for updates using Software Updater app. then, update the package index files on the system using 'sudo apt-get update' command in terminal.
+
+# Step 2
+
