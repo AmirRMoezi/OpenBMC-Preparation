@@ -12,14 +12,16 @@ Install the requrements:
 <pre>
 <code>
 sudo apt install git python3-distutils gcc g++ make file wget \ 
-gawk diffstat bzip2 cpio chrpath zstd lz4 bzip2 unzip texinfo \
-build-essential  socat  python3 python3-pip python3-pexpect xz-utils \
-debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa \
-libsdl1.2-dev python3-subunit mesa-common-dev  liblz4-tool locales
+      gawk diffstat bzip2 cpio chrpath zstd lz4 bzip2 unzip texinfo \
+      build-essential  socat  python3 python3-pip python3-pexpect xz-utils \
+      debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa \
+      libsdl1.2-dev python3-subunit mesa-common-dev  liblz4-tool locales
 </code>
 </pre>
+<pre><code>
 sudo locale-gen en_US.UTF-8
-
+</code>
+</pre>
 # Step 3
 Downlod the OpenBMC source:
 git clone https://github.com/openbmc/openbmc
