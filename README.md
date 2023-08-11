@@ -11,7 +11,7 @@ Choose Ubuntu 22.04 LTS as your host. Install it on your computer or a virtual e
 Install the requrements:
 <pre>
 <code>
-sudo apt install git python3-distutils gcc g++ make file wget \
+sudo apt install git python3-distutils gcc g++ make file wget \ 
 gawk diffstat bzip2 cpio chrpath zstd lz4 bzip2 unzip texinfo \
 build-essential  socat  python3 python3-pip python3-pexpect xz-utils \
 debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa \
