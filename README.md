@@ -9,11 +9,13 @@ Choose Ubuntu 22.04 LTS as your host. Install it on your computer or a virtual e
 
 # Step 2
 Install the requrements:
-
-`sudo apt install git python3-distutils gcc g++ make file wget \
+<pre>
+<code>
+sudo apt install git python3-distutils gcc g++ make file wget \
 gawk diffstat bzip2 cpio chrpath zstd lz4 bzip2
 unzip texinfo  build-essential  socat  python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev python3-subunit mesa-common-dev  liblz4-tool locales
-`
+</code>
+</pre>
 sudo locale-gen en_US.UTF-8
 
 # Step 3
