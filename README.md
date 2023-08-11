@@ -24,5 +24,32 @@ sudo locale-gen en_US.UTF-8
 </pre>
 ## Step 3
 ### Downlod the OpenBMC source:
+<pre><code>
 git clone https://github.com/openbmc/openbmc
 cd openbmc
+</code>
+</pre>
+## Step 4
+### Target your hardware
+It is essential to set up your build environment according to your target hardware. run the following command to get supported taget hardwares
+<pre>
+<code>
+$ . setup
+
+bletchley               mori                    s8036
+dl360poc                mtjade                  swift
+e3c246d4i               mtmitchell              tatlin-archive-x86
+ethanolx                nicole                  tiogapass
+evb-ast2500             olympus-nuvoton         transformers
+evb-ast2600             on5263m5                vegman-n110
+evb-npcm750             p10bmc                  vegman-rx20
+f0b                     palmetto                vegman-sx20
+fp5280g2                qcom-dc-scm-v1          witherspoon
+g220a                   quanta-q71l             witherspoon-tacoma
+gbs                     romed8hm3               x11spi
+greatlakes              romulus                 yosemitev2
+gsj                     s2600wf                 zaius
+kudo                    s6q
+lannister               s7106
+</code>  
+</pre>
