@@ -53,3 +53,39 @@ kudo                    s6q
 lannister               s7106
 </code>  
 </pre>
+
+In this tutorial, we use evb-ast2500 as the target. So, run this command in terminal without sudo:
+
+<pre>
+<code>
+$ . setup evb-ast2500  
+</code>  
+</pre>
+
+Then, a folder called evb-ast2500 is cerated in the directory ./build. If you have encountered any warning message about not having permission to chmod a file, open a new terminal and change the permission of all files and folders in ./build/evb-ast2500 to 777 with sudo. Then, run the .setup command again in the previous terminal without sudo. At last the output of this command looks like this:
+<pre>
+<code>
+obmc@obmc-virtual-machine:~/Desktop/openbmc$ . setup evb-ast2500
+Machine evb-ast2500 found in meta-evb/meta-evb-aspeed/meta-evb-ast2500
+WARNING: unable to chmod /home/obmc/Desktop/openbmc/build/evb-ast2500
+WARNING: unable to chmod /home/obmc/Desktop/openbmc/build/evb-ast2500/conf
+Common targets are:
+
+     obmc-phosphor-image: Includes OpenBMC Phosphor userspace and Web UI
+
+     core-image-minimal: A small image just capable of allowing a device to boot
+
+     core-image-full-cmdline: A small image with more Linux functionality
+                              installed, including a ssh server.
+</code>  
+</pre>
+
+## Step 5
+### Bake your OpenBMC
+In the same terminal you ran .setup command, run this command:
+<pre>
+<code>  
+$ bitbake obmc-phosphor-image
+</code>  
+</pre>
+This command will make
