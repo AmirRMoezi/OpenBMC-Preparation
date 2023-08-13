@@ -62,7 +62,7 @@ $ . setup evb-ast2500
 </code>  
 </pre>
 
-Subsequently, a directory named evb-ast2500 is created within the openbmc/build directory. Should you come across any warning messages pertaining to insufficient permissions to chmod a file, please initiate a new terminal session and modify the permissions of all files and directories within openbmc/build/evb-ast2500 to 777 using the 'sudo' command. Following this, proceed to execute the '.setup' command once more in the initial terminal session, this time omitting the 'sudo' prefix. Ultimately, the output of this command will manifest as follows:
+Subsequently, a directory named evb-ast2500 is created within the openbmc/build directory. Should you come across any warning messages pertaining to insufficient permissions to chmod a file, please initiate a new terminal session and modify the permissions of all files and directories within openbmc/build/evb-ast2500 to 777 using the 'sudo' command. Following this, proceed to execute the `. setup` command once more in the initial terminal session, this time omitting the 'sudo' prefix. Ultimately, the output of this command will manifest as follows:
 
 <pre>
 <code>
@@ -127,7 +127,7 @@ It says that yoy should not have root access in the terminal in which you are ex
   This error says that there is a problem in your internet connection or your ISP or network is blocking the above URL. Check it and if it was not solved, add 'CONNECTIVITY_CHECK_URIS = "URL"' to this file :
 <pre>
   <code>
-    openbmc/poky/meta/conf/sanity.conf
+openbmc/poky/meta/conf/sanity.conf
   </code>
 </pre>
 Replace 'URL' with any URL accesssible from your network. This is the method Bitbake uses to chech internet access.
@@ -142,7 +142,7 @@ Replace 'URL' with any URL accesssible from your network. This is the method Bit
   This error relates to executing some commands in the files located in this path:
 <pre>
   <code>
-    openbmc/poky/scripts/postinst-intercepts
+openbmc/poky/scripts/postinst-intercepts
   </code>
 </pre>
 To solve this error, you should change the permission of these files in the path to 644. Then, run the Bitbake command again.
