@@ -105,6 +105,19 @@ To simulate OpenBMC, you need the image with .mtd extension. Find it and simulat
 qemu-system-arm -M ast2500-evb -nic user -drive file=obmc-phosphor-image-ast2500.static.mtd,format=raw,if=mtd -nographic
 </code>  
 </pre>
-Note that the name of your mtd file may differ. It is probably like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So change the name of mtd file in the command above according to your mtd file name.
+Note that the name of your mtd file may differ. It is probably like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So change the name of mtd file in the command above according to your mtd file name. This image is included it the repository.
+To run the OpenBMC on the real AST2500 evaluation board, you should extract a compressed file with '.mtd.all.tar' extension. It includes a file named 'image-bmc'. put a .bin extension on it and program the board with this image. This image is included it the repository.
 
-To run the OpenBMC on the real AST2500 evaluation board, you should extract a compressed file with '.mtd.all.tar' extension. It includes a file named 'image-bmc'. put a .bin extension on it and program the board with this image.
+# Possible problems and solutions
+## Do not use Bitbake as root
+You may encounter this error at the beginning of baking process:
+<pre>
+  <code>
+    ERROR:  OE-core's config sanity checker detected a potential misconfiguration.
+    Either fix the cause of this error or at your own risk disable the checker (see sanity.conf).
+    Following is the list of potential problems / advisories:
+
+    Do not use Bitbake as root.
+  </code>
+</pre>
+It says that yoy should not have root access in the terminal in which you are executing setup and bitbake commands. 
