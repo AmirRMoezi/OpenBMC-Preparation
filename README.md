@@ -119,16 +119,16 @@ Either fix the cause of this error or at your own risk disable the checker (see 
 Following is the list of potential problems / advisories:
 
 Do not use Bitbake as root.
-  </code>
+</code>
 </pre>
 It says that yoy should not have root access in the terminal in which you are executing setup and bitbake commands as was said in Step 4.
 
 ## Fetcher failure for URL: 'https://yoctoproject.org/connectivity.html'
   This error says that there is a problem in your internet connection or your ISP or network is blocking the above URL. Check it and if it was not solved, add 'CONNECTIVITY_CHECK_URIS = "URL"' to this file :
 <pre>
-  <code>
+<code>
 openbmc/poky/meta/conf/sanity.conf
-  </code>
+</code>
 </pre>
 Replace 'URL' with any URL accesssible from your network. This is the method Bitbake uses to chech internet access.
 
@@ -141,13 +141,13 @@ Replace 'URL' with any URL accesssible from your network. This is the method Bit
 ## Error: The postinstall intercept hook '...' failed
   This error relates to executing some commands in the files located in this path:
 <pre>
-  <code>
+<code>
 openbmc/poky/scripts/postinst-intercepts
-  </code>
+</code>
 </pre>
 To solve this error, you should change the permission of these files in the path to 644. Then, run the Bitbake command again.
 <pre>
-  <code>
+<code>
 update_gio_module_cache     
 update_mime_database
 postinst_intercept       
@@ -158,6 +158,5 @@ update_gtk_immodules_cache
 update_udev_hwdb
 update_font_cache        
 update_mandb
-  </code>
+</code>
 </pre>
-  
