@@ -88,4 +88,23 @@ In the same terminal you ran .setup command, run this command:
 $ bitbake obmc-phosphor-image
 </code>  
 </pre>
-This command will make
+Bitbake is a build tool for embedded Linux cross compilation. It compiles your OpenBMC.
+
+## Step 6
+### Everything is ready. Run your OpenBMC
+After successfully compiling OpenBMC, the images necessary for running OpenBMC on Qemu and real board are ready. The images exist in this directory:
+<pre>
+<code>
+openbmc/build/evb-ast2500/tmp/deploy/images  
+</code>  
+</pre>
+
+To simulate OpenBMC, you need the image with .mtd extension. Find it and simulate it in qemu using this command:
+<pre>
+<code>
+qemu-system-arm -M ast2500-evb -nic user -drive file=obmc-phosphor-image-ast2500.static.mtd,format=raw,if=mtd -nographic
+</code>  
+</pre>
+Note that the name of your mtd file may differ. It is probably like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So change the name of mtd file in the command above according to your mtd file name.
+
+To run the OpenBMC on the real AST2500 evaluation board, you should extract a compressed file with '.mtd.all.tar' extension. It includes a file named 'image-bmc'. put a .bin extension on it and program the board with this image.
