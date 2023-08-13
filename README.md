@@ -105,12 +105,12 @@ To simulate OpenBMC, you need the image with .mtd extension. Find it and simulat
 qemu-system-arm -M ast2500-evb -nic user -drive file=obmc-phosphor-image-ast2500.static.mtd,format=raw,if=mtd -nographic
 </code>  
 </pre>
-Note that the name of your mtd file may differ. It is probably like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So change the name of mtd file in the command above according to your mtd file name. This image is included it the repository.
+  Note that the name of your mtd file may differ. It is probably like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So change the name of mtd file in the command above according to your mtd file name. This image is included it the repository.
 To run the OpenBMC on the real AST2500 evaluation board, you should extract a compressed file with '.mtd.all.tar' extension. It includes a file named 'image-bmc'. put a .bin extension on it and program the board with this image. This image is included it the repository.
 
 # Possible problems and solutions
 ## Do not use Bitbake as root
-You may encounter this error at the beginning of baking process:
+  You may encounter this error at the beginning of baking process:
 <pre>
   <code>
     ERROR:  OE-core's config sanity checker detected a potential misconfiguration.
@@ -120,4 +120,43 @@ You may encounter this error at the beginning of baking process:
     Do not use Bitbake as root.
   </code>
 </pre>
-It says that yoy should not have root access in the terminal in which you are executing setup and bitbake commands. 
+It says that yoy should not have root access in the terminal in which you are executing setup and bitbake commands as was said in Step 4.
+
+## Fetcher failure for URL: 'https://yoctoproject.org/connectivity.html'
+  This error says that there is a problem in your internet connection or your ISP or network is blocking the above URL. Check it and if it was not solved, add 'CONNECTIVITY_CHECK_URIS = "URL"' to this file :
+<pre>
+  <code>
+    openbmc/poky/meta/conf/sanity.conf
+  </code>
+</pre>
+Replace 'URL' with any URL accesssible from your network. This is the method Bitbake uses to chech internet access.
+
+## Warning: ... do_fetch: Failed to fetch URL ..., attemting mirrors if available
+  This warning indicates that there is a problem in downloading some files from the URL mentioned in warning the message because of internet connection problems. It tries to fetch it from mirror links if available. Else, it raises an error and the process will be stopped.
+
+## Error: ... do_fetch: Fetcher failure: ...
+  This error indicates that there downloading some files has been faced serious problems because of internet connection problems. Try to check your internet connection or change it if possible. Then, execute Bitbake command again. Note that executing the Bitbake command after facing an error, does not start the process from the beginning and continues from the last successfull task done.
+
+## Error: The postinstall intercept hook '...' failed
+  This error relates to executing some commands in the files located in this path:
+<pre>
+  <code>
+    openbmc/poky/scripts/postinst-intercepts
+  </code>
+</pre>
+To solve this error, you should change the permission of these files in the path to 644. Then, run the Bitbake command again.
+<pre>
+  <code>
+update_gio_module_cache     
+update_mime_database
+postinst_intercept       
+update_gtk_icon_cache       
+update_pixbuf_cache
+update_desktop_database  
+update_gtk_immodules_cache  
+update_udev_hwdb
+update_font_cache        
+update_mandb
+  </code>
+</pre>
+  
