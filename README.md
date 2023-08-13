@@ -114,11 +114,11 @@ To run the OpenBMC on the real AST2500 evaluation board, you should extract a co
   You may encounter this error at the beginning of baking process:
 <pre>
   <code>
-    ERROR:  OE-core's config sanity checker detected a potential misconfiguration.
-    Either fix the cause of this error or at your own risk disable the checker (see sanity.conf).
-    Following is the list of potential problems / advisories:
+ERROR:  OE-core's config sanity checker detected a potential misconfiguration.
+Either fix the cause of this error or at your own risk disable the checker (see sanity.conf).
+Following is the list of potential problems / advisories:
 
-    Do not use Bitbake as root.
+Do not use Bitbake as root.
   </code>
 </pre>
 It says that yoy should not have root access in the terminal in which you are executing setup and bitbake commands as was said in Step 4.
