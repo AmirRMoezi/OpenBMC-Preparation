@@ -145,7 +145,7 @@ Replace 'URL' with any URL accesssible from your network. This is the method Bit
 openbmc/poky/scripts/postinst-intercepts
 </code>
 </pre>
-To solve this error, you should change the permission of these files in the path to 644. Then, run the Bitbake command again.
+To solve this error, you should change the permission of the files below in the path to 644. Then, run the Bitbake command again.
 <pre>
 <code>
 update_gio_module_cache     
