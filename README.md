@@ -1,11 +1,11 @@
 # How to prepare OpenBMC
-In this tutorial, you will learn how to prepare OpenBMC as an open source embedded Linux for AST2500 Evaluation Board.
+In this instructional guide, you will acquire the knowledge necessary to prepare OpenBMC as an open source embedded Linux for implementation on the AST2500-EVB Board.
 <p align="center">
   <img width="300" height="300" src="https://github.com/AmirRMoezi/OpenBMC/blob/main/OpenBMC_logo.png">
 </p>
 
 ## Step 1
-Choose Ubuntu 22.04 LTS as your host. Install it on your computer or a virtual environment such as VMWare. Do not forget to download updates while installing the Ubuntu. After installation process has been completed, check for updates using Software Updater app. then, update the package index files on the system using 'sudo apt-get update' command in terminal.
+Opt for Ubuntu 22.04 LTS as your preferred host operating system. Proceed with its installation on your computer or within a virtual environment, such as VMWare. Please ensure the inclusion of updates during the Ubuntu installation process. Upon the successful completion of the installation procedure, kindly perform a thorough check for updates utilizing the Software Updater application. Subsequently, refresh the package index files within the system by executing the 'sudo apt-get update' command in the terminal.
 
 ## Step 2
 ### Install the requrements:
@@ -31,7 +31,7 @@ cd openbmc
 </pre>
 ## Step 4
 ### Target your hardware
-It is essential to set up your build environment according to your target hardware. run the following command to get supported taget hardwares
+It is essential to set up your build environment according to your target hardware. run the following command to get supported taget hardwares list:
 <pre>
 <code>
 $ . setup
@@ -62,7 +62,8 @@ $ . setup evb-ast2500
 </code>  
 </pre>
 
-Then, a folder called evb-ast2500 is cerated in the directory ./build. If you have encountered any warning message about not having permission to chmod a file, open a new terminal and change the permission of all files and folders in ./build/evb-ast2500 to 777 with sudo. Then, run the .setup command again in the previous terminal without sudo. At last the output of this command looks like this:
+Subsequently, a directory named evb-ast2500 is created within the openbmc/build directory. Should you come across any warning messages pertaining to insufficient permissions to chmod a file, please initiate a new terminal session and modify the permissions of all files and directories within openbmc/build/evb-ast2500 to 777 using the 'sudo' command. Following this, proceed to execute the '.setup' command once more in the initial terminal session, this time omitting the 'sudo' prefix. Ultimately, the output of this command will manifest as follows:
+
 <pre>
 <code>
 obmc@obmc-virtual-machine:~/Desktop/openbmc$ . setup evb-ast2500
@@ -82,7 +83,7 @@ Common targets are:
 
 ## Step 5
 ### Bake your OpenBMC
-In the same terminal you ran .setup command, run this command:
+Within the same terminal where you executed the '.setup' command, proceed to input the following command:
 <pre>
 <code>  
 $ bitbake obmc-phosphor-image
