@@ -93,7 +93,7 @@ Bitbake is a build tool for embedded Linux cross compilation. It compiles your O
 
 ## Step 6
 ### Everything is ready. Run your OpenBMC
-After successfully compiling OpenBMC, the images necessary for running OpenBMC on Qemu and real board are ready. The images exist in this directory:
+Upon the successful compilation of OpenBMC, the requisite images essential for the execution of OpenBMC on both QEMU and an actual board have been prepared. These images are situated within the following directory:
 <pre>
 <code>
 openbmc/build/evb-ast2500/tmp/deploy/images  
@@ -106,12 +106,12 @@ To simulate OpenBMC, you need the image with .mtd extension. Find it and simulat
 qemu-system-arm -M ast2500-evb -nic user -drive file=obmc-phosphor-image-ast2500.static.mtd,format=raw,if=mtd -nographic
 </code>  
 </pre>
-  Note that the name of your mtd file may differ. It is probably like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So change the name of mtd file in the command above according to your mtd file name. This image is included it the repository.
-To run the OpenBMC on the real AST2500 evaluation board, you should extract a compressed file with '.mtd.all.tar' extension. It includes a file named 'image-bmc'. put a .bin extension on it and program the board with this image. This image is included it the repository.
+Please remember that your '.mtd' file might have a different name, like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So, you need to adjust the filename in the command accordingly. This image is in the repository.
+To run OpenBMC on an actual AST2500 evaluation board, you should first extract a compressed file with the '.mtd.all.tar' extension. Inside this file, you'll find a 'image-bmc' file. Just add '.bin' to its name and use that file to program the board. This image is also available in the repository.
 
 # Possible problems and solutions
 ## Do not use Bitbake as root
-  You may encounter this error at the beginning of baking process:
+You may encounter this error at the beginning of baking process:
 <pre>
   <code>
 ERROR:  OE-core's config sanity checker detected a potential misconfiguration.
@@ -121,31 +121,30 @@ Following is the list of potential problems / advisories:
 Do not use Bitbake as root.
 </code>
 </pre>
-It says that yoy should not have root access in the terminal in which you are executing setup and bitbake commands as was said in Step 4.
-
+The instructions highlight that you should avoid utilizing root access within the terminal where you're executing the 'setup' and 'bitbake' commands, as outlined in Step 4.
 ## Fetcher failure for URL: 'https://yoctoproject.org/connectivity.html'
-  This error says that there is a problem in your internet connection or your ISP or network is blocking the above URL. Check it and if it was not solved, add 'CONNECTIVITY_CHECK_URIS = "URL"' to this file :
+This error message indicates an issue with your internet connection, or it's possible that your ISP or network is obstructing the provided URL. Please verify your connection and if the problem persists, consider adding 'CONNECTIVITY_CHECK_URIS = "URL"' to this file:
 <pre>
 <code>
 openbmc/poky/meta/conf/sanity.conf
 </code>
 </pre>
-Replace 'URL' with any URL accesssible from your network. This is the method Bitbake uses to chech internet access.
+Substitute 'URL' with any accessible URL from your network. This is the method that Bitbake employs to verify internet connectivity.
 
 ## Warning: ... do_fetch: Failed to fetch URL ..., attemting mirrors if available
-  This warning indicates that there is a problem in downloading some files from the URL mentioned in warning the message because of internet connection problems. It tries to fetch it from mirror links if available. Else, it raises an error and the process will be stopped.
+This warning means that some files couldn't be downloaded from the URL mentioned due to internet connection problems. The system tries other links if there are any available. If not, an error occurs and the process stops.
 
 ## Error: ... do_fetch: Fetcher failure: ...
-  This error indicates that there downloading some files has been faced serious problems because of internet connection problems. Try to check your internet connection or change it if possible. Then, execute Bitbake command again. Note that executing the Bitbake command after facing an error, does not start the process from the beginning and continues from the last successfull task done.
+This error means that downloading certain files has encountered significant problems due to internet connection issues. Please check your internet connection or consider switching it if feasible. Once that's done, try running the Bitbake command again. It's important to note that if you execute the Bitbake command after encountering an error, it won't restart the process from scratch; it'll resume from the point of the last successfully completed task.
 
 ## Error: The postinstall intercept hook '...' failed
-  This error relates to executing some commands in the files located in this path:
+This error is associated with running specific commands found within the files located at this particular path:
 <pre>
 <code>
 openbmc/poky/scripts/postinst-intercepts
 </code>
 </pre>
-To solve this error, you should change the permission of the files below in the path to 644. Then, run the Bitbake command again.
+To address this error, you need to modify the permissions of the files listed below within the specified path to 644. Afterward, proceed to execute the Bitbake command again.
 <pre>
 <code>
 update_gio_module_cache     
