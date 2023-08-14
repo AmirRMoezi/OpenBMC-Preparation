@@ -106,8 +106,8 @@ To simulate OpenBMC, you need the image with .mtd extension. Find it and simulat
 qemu-system-arm -M ast2500-evb -nic user -drive file=obmc-phosphor-image-ast2500.static.mtd,format=raw,if=mtd -nographic
 </code>  
 </pre>
-Please remember that your '.mtd' file might have a different name, like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So, you need to adjust the filename in the command accordingly. This image is in the repository.
-To run OpenBMC on an actual AST2500 evaluation board, you should first extract a compressed file with the '.mtd.all.tar' extension. Inside this file, you'll find a 'image-bmc' file. Just add '.bin' to its name and use that file to program the board. This image is also available in the repository.
+Please remember that your '.mtd' file might have a different name, like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So, you need to adjust the filename in the command accordingly. This image is available in the repository.
+To run OpenBMC on an actual AST2500 evaluation board, you should first extract a compressed file with the '.mtd.all.tar' extension. Inside this file, you'll find a 'image-bmc' file. Just add '.bin' to its name and use that file to program the board. 
 
 # Possible problems and solutions
 ## Do not use Bitbake as root
