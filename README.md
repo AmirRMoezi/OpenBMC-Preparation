@@ -1,5 +1,5 @@
 # How to prepare OpenBMC
-In this instructional guide, you will acquire the knowledge necessary to prepare OpenBMC as an open source embedded Linux for implementation on the AST2500-EVB Board.
+In this instructional guide, you will acquire the knowledge necessary to prepare OpenBMC as an open source embedded Linux for implementation on the AST2500-EVB target.
 <p align="center">
   <img width="300" height="300" src="https://github.com/AmirRMoezi/OpenBMC/blob/main/OpenBMC_logo.png">
 </p>
