@@ -83,7 +83,7 @@ Common targets are:
 
 ## Step 5
 ### Bake your OpenBMC
-Within the same terminal where you executed the '.setup' command, proceed to input the following command:
+Within the same terminal where you executed the `. setup` command, proceed to input the following command:
 <pre>
 <code>  
 $ bitbake obmc-phosphor-image
