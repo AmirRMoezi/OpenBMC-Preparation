@@ -173,6 +173,6 @@ Note: Reconnecting to bitbake server ...
 To resolve this issue, please delete the file named 'bitbake.lock' in the following path:
 <pre>
   <code>
-openbmc/build/<YourTargetHarware>
+openbmc/build/[YourTargetHarware]
   </code>
 </pre>
