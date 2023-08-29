@@ -159,3 +159,20 @@ update_font_cache
 update_mandb
 </code>
 </pre>
+## Note: Reconnecting to bitbake server ...
+The following messages might appear in the terminal when you execute the bitbake command again after encountering an error:
+<pre>
+  <code>
+Note: Reconnecting to bitbake server ...
+Note: No reply from server in Xs (for command setFeatures)
+Note: Retrying server connection (#1)...
+Note: Reconnecting to bitbake server ...
+...
+  </code>
+</pre>
+To resolve this issue, please delete the file named 'bitbake.lock' in the following path:
+<pre>
+  <code>
+openbmc/build/<YourTargetHarware>
+  </code>
+</pre>
