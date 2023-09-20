@@ -15,7 +15,7 @@ sudo apt install git python3-distutils gcc g++ make file wget \
       gawk diffstat bzip2 cpio chrpath zstd lz4 bzip2 unzip texinfo \
       build-essential  socat  python3 python3-pip python3-pexpect xz-utils \
       debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa \
-      libsdl1.2-dev python3-subunit mesa-common-dev  liblz4-tool locales
+      libsdl1.2-dev python3-subunit mesa-common-dev  liblz4-tool locales qemu-system-arm
 </code>
 </pre>
 <pre><code>
@@ -176,3 +176,5 @@ To resolve this issue, please delete the file named 'bitbake.lock' in the follow
 openbmc/build/evb-ast2500/
   </code>
 </pre>
+## What about AST2600-EVB?
+To the best of our knowledge, ubuntu 23.04 and OpenBMC source code from AspeedTech-BMC github page are the best options to avoid errors during compilation and simulation. Other topics remain the same as the AST2500-EVB.
