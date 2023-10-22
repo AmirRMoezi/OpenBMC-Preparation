@@ -177,4 +177,4 @@ openbmc/build/evb-ast2500/
   </code>
 </pre>
 ## What about AST2600-EVB?
-To the best of our knowledge, ubuntu 23.04 and OpenBMC source code from AspeedTech-BMC github page are the best options to avoid errors during compilation and simulation. Other topics remain the same as the AST2500-EVB.
+To the best of our knowledge, ubuntu 23.04 and OpenBMC source code from AspeedTech-BMC github page are the best options to avoid possible errors during compilation and simulation. Other topics remain the same as the AST2500-EVB.
