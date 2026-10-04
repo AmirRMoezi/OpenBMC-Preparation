@@ -104,6 +104,8 @@ To simulate OpenBMC, you need the image with .mtd extension. Find it and simulat
 <pre>
 <code>
 qemu-system-arm -M ast2500-evb -nic user -drive file=obmc-phosphor-image-ast2500.static.mtd,format=raw,if=mtd -nographic
+
+qemu-system-arm -M ast2600-evb -nographic  -drive file=./qscft.mtd,format=raw,if=mtd -net nic -net user,hostfwd=:127.0.0.1:2222-:22,hostfwd=:127.0.0.1:2443-:443,hostfwd=udp:127.0.0.1:2623-:623,hostname=qemu  
 </code>  
 </pre>
 Please remember that your '.mtd' file might have a different name, like 'obmc-phosphor-image-evb-ast2500-20230813043725.static.mtd'. So, you need to adjust the filename in the command accordingly. This image is available in the repository.
